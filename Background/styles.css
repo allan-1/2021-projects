@@ -1,0 +1,25 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.container{
+    height: 100vh;
+    background: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+button{
+    padding: 0.5rem;
+    font-size: 1.3rem;
+    margin: 1rem;
+    border-radius: 5px;
+    border: none;
+    box-shadow: 2px 10px 10px black;
+    cursor: pointer;
+}
+h1.hex-color{
+    text-transform: uppercase;
+}
