@@ -1,9 +1,9 @@
-const minutes = document.querySelector('.minutes');
-const seconds = document.querySelector('.seconds');
+const minutes = document.getElementById('minutes');
+const seconds = document.getElementById('seconds');
 
-const start = document.querySelector('.start');
-const stop = document.querySelector('.stop')
-const reset = document.querySelector('.reset')
+const start = document.getElementById('start');
+const stop = document.getElementById('stop')
+const reset = document.getElementById('reset')
 
 let starttime = 0;
 let minutestime = 0;
@@ -16,7 +16,7 @@ reset.addEventListener('click', resetCounter);
 // functions
 
 function startCounters() {
-    document.querySelector('.start').disabled = true;
+    document.getElementById('start').disabled = true;
     starttime ++
     if (starttime >= 60) {
         minutestime ++
@@ -31,7 +31,7 @@ function startCounter() {
 }
 
 function stopCounter() {
-    document.querySelector('.start').disabled = false;
+    document.getElementById('start').disabled = false;
     clearInterval(timer)
 }
 function resetCounter() {
