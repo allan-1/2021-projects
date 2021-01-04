@@ -22,14 +22,9 @@ function startCounters() {
         minutestime ++
         starttime = 0
     }
-    if (starttime <= 9) {
-        seconds.innerText = '0' + starttime + ' S'
-        minutes.innerText = minutestime + 'Min'
-    }
-    else {
-        seconds.innerText = starttime + 'S'
-        minutes.innerText = minutestime + 'Min'
-    }
+    starttime = (starttime < 9) ? '0' + starttime : starttime
+    seconds.innerText = starttime + 'S'
+    minutes.innerText = minutestime + 'Min'
 }
 function startCounter() {
     timer = setInterval(startCounters, 1000)
