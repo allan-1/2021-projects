@@ -8,6 +8,7 @@ body{
     background-image: linear-gradient( 102.1deg,  rgba(96,221,142,1) 8.7%, rgba(24,138,141,1) 88.1% );
     min-height: 100vh;
     text-align: center;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 .clock{
     position: absolute;
@@ -22,7 +23,7 @@ body{
 }
 .hand{
     height: 3px;
-    width: 140px;
+    width: 130px;
     position: absolute;
     top: 50%;
     margin: 3px;
@@ -38,4 +39,9 @@ body{
 }
 .hour{
     background-color: rgb(71, 68, 68);
+}
+.day{
+    color: magenta;
+    position: absolute;
+    margin: 3rem;
 }
