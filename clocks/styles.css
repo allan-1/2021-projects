@@ -1,0 +1,41 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-image: linear-gradient( 102.1deg,  rgba(96,221,142,1) 8.7%, rgba(24,138,141,1) 88.1% );
+    min-height: 100vh;
+    text-align: center;
+}
+.clock{
+    position: absolute;
+    bottom: 50%;
+    right: 50%;
+}
+.clockface{
+    height: 300px;
+    width: 300px;
+    border: 6px solid black;
+    border-radius: 100%;
+}
+.hand{
+    height: 3px;
+    width: 140px;
+    position: absolute;
+    top: 50%;
+    margin: 3px;
+    transform-origin: 100%;
+    transition: all 0s ease-in-out;
+    transform: rotate(90deg);
+}
+.seconds{
+    background-color: #161d6f;
+}
+.minutes{
+    background-color: #0f1123;
+}
+.hour{
+    background-color: rgb(71, 68, 68);
+}
