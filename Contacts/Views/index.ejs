@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.15.2/css/all.css"
+      integrity="sha384-vSIIfh2YWi9wW0r9iZe7RJPrKwp6bG+s9QZMoITbCckVJqGCCRhc+ccxNcdpHuYu"
+      crossorigin="anonymous"
+    />
+    <title>Contact</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="header">
+      <h1>Contact List</h1>
+    </div>
+    <div class="contactlist">
+      <table>
+        <tr>
+          <th>Name</th>
+          <th>Email</th>
+          <th>Phone number</th>
+        </tr>
+        <% phone.forEach(detail =>{ %>
+        <div class="contact">
+          <tr>
+            <td><%= detail.fname %> <%= detail.Lname %></td>
+            <td><%= detail.email %></td>
+            <td><%= detail.tel %></td>
+          </tr>
+        </div>
+        <% }) %>
+      </table>
+    </div>
+    <div class="modal">
+      <div class="contact_form">
+        <form action="/contact" method="post">
+          <h1>Create new contact</h1>
+          <div class="names">
+            <input type="text" name="Fname" placeholder="First Name" />
+            <input type="text" name="Lname" placeholder="Last Name" />
+          </div>
+          <input type="text" name="email" placeholder="Input Email adress" />
+          <input
+            type="tel"
+            name="telephone"
+            id="tel"
+            placeholder="Enter phone number"
+          />
+          <div class="buttons">
+            <div class="close">
+              <button>Cancel</button>
+            </div>
+            <button type="submit">Save</button>
+          </div>
+        </form>
+      </div>
+    </div>
+    <div class="add">
+      <button><i class="fas fa-plus"></i> Create Contact</button>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>

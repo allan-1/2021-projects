@@ -1,0 +1,111 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    min-height: 100vh;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+.modal-active{
+    background-color: rgba(133, 124, 124, 0.041);
+}
+.header{
+    min-height: 10vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.modal{
+    display: none;
+    flex-direction: column;
+    background-color: rgba(255, 255, 255, 0.966);
+    width: 50%;
+    position: absolute;
+    bottom: 40%;
+    left: 20rem;
+    z-index: 100;
+    border-radius: 15px;
+    box-shadow: 5px 10px 10px rgb(77, 74, 74);
+}
+form{
+    display: flex;
+    flex-direction: column;
+}
+form h1{
+    color: #000;
+    border-bottom: 0.5px solid rgb(175, 175, 175);
+    font-size: 1rem;
+    margin-bottom: 1rem;
+    margin-top: 1.2rem;
+    padding-bottom: 0.6rem;
+    padding-left: 1rem;
+}
+form input{
+    margin: 0.5rem 1rem;
+    height: 2rem;
+    width: 30rem;
+    font-size: 1rem;
+    padding: 0.5rem;
+    border: none;
+    border-bottom: 1px solid black;
+    transition: all 0.3s ease-in;
+}
+form input:focus{
+    border-bottom: 3px solid rgb(103, 103, 255);
+    outline: none;
+}
+.buttons{
+    display: flex;
+    justify-content: flex-end;
+    border-top: 0.5px solid rgb(175, 175, 175);
+    margin: 1rem 0 0.5rem;
+    padding: 0.2rem 0.3rem;
+}
+.close button, button[type='submit']{
+    margin: 0.3rem;
+    padding: 0.5rem;
+    color: #1a73e8;
+    font-size: 1.2rem;
+    background: none;
+    transition: all 0.5s ease-in-out;
+}
+.close button:hover, button[type='submit']:hover{
+    background-color: #ddfdd0;
+    border-radius: 8px;
+}
+.names{
+    display: flex;
+}
+form button{
+    width: 5rem;
+    border: none;
+    font-size: 1rem;
+}
+.add{
+    position: absolute;
+    bottom: 10%;
+    right: 20%;
+}
+.add button{
+    font-size: 1.2rem;
+    padding: 0.6rem;
+    border-radius: 15px;
+    border: none;
+    box-shadow: 5px 5px 8px black;
+}
+.contactlist{
+    margin: 0 2rem;
+    width: 60%;
+}
+table{
+    width: 100%;
+    border-collapse: collapse;
+}
+th{
+    border-bottom: 1px solid black;
+}
+.contact tr{
+    margin: 1rem;
+    background-color: #1a73e8;
+}
