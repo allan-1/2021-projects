@@ -1,6 +1,8 @@
 const audio = document.getElementById('audio')
 const audioContainer = document.getElementById('music-cont')
 
+const title = document.getElementById('title')
+
 const play = document.getElementById('play');
 const next = document.getElementById('next');
 const previous = document.getElementById('prev')
@@ -8,19 +10,32 @@ const previous = document.getElementById('prev')
 
 // audio list
 const audios = [
-    {path: './Music/Leslie Odom Jr. & Sia - Cold (Lyric Video).mp3'}, 
-    {path: './Music/Kygo - Raging ft. Kodaline (Official Lyric Video).mp3'},
-    {path: './Music/Davido - Holy Ground (Official Audio) ft. Nicki Minaj.mp3'}
+    {
+        title: 'Sia - cold',
+        path: './Music/Leslie Odom Jr. & Sia - Cold (Lyric Video).mp3'
+    }, 
+    {
+        title: 'Kodaline - Raging',
+        path: './Music/Kygo - Raging ft. Kodaline (Official Lyric Video).mp3'
+    },
+    {
+        title: 'Davido - holy Ground ft Nicki Minaj',
+        path: './Music/Davido - Holy Ground (Official Audio) ft. Nicki Minaj.mp3'
+    }
 ]
 
 
 let audioindex = 1;
 
+// load song into dom first
+loadAudio(audios[audioindex].path, audios[audioindex].title)
+
 // functions
 
 // load music to audio
-function loadAudio(song){
+function loadAudio(song, musictitle){
     audio.src = song
+    title.innerText = musictitle
 }
 
 function playMusic(){
@@ -28,7 +43,7 @@ function playMusic(){
     audio.play()
 }
 
-function pauseMusic(song){
+function pauseMusic(){
     audioContainer.classList.remove('play')
     audio.pause()
 }
@@ -38,9 +53,8 @@ function nextMusic(){
     if(audioindex > audios.length - 1){
         audioindex = 0
     }
-    loadAudio(audios[audioindex].path)
-
-    audio.play()
+    loadAudio(audios[audioindex].path, audios[audioindex].title)
+    playMusic()
 }
 
 function previousMusic(){
@@ -48,9 +62,8 @@ function previousMusic(){
     if(audioindex < 0){
         audioindex = audios.length - 1
     }
-    loadAudio(audios[audioindex].path)
-
-    audio.play()
+    loadAudio(audios[audioindex].path, audios[audioindex].title)
+    playMusic()
 }
 
 // event listeners
