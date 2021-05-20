@@ -1,6 +1,8 @@
 const audio = document.getElementById('audio')
 const audioContainer = document.getElementById('music-cont')
 
+const image = document.getElementById('image')
+
 const title = document.getElementById('title')
 
 const play = document.getElementById('play');
@@ -12,15 +14,18 @@ const previous = document.getElementById('prev')
 const audios = [
     {
         title: 'Sia - cold',
-        path: './Music/Leslie Odom Jr. & Sia - Cold (Lyric Video).mp3'
+        path: './Music/Leslie Odom Jr. & Sia - Cold (Lyric Video).mp3',
+        image: './images/cold.jpeg'
     }, 
     {
         title: 'Kodaline - Raging',
-        path: './Music/Kygo - Raging ft. Kodaline (Official Lyric Video).mp3'
+        path: './Music/Kygo - Raging ft. Kodaline (Official Lyric Video).mp3',
+        image: './images/raging.jpeg'
     },
     {
         title: 'Davido - holy Ground ft Nicki Minaj',
-        path: './Music/Davido - Holy Ground (Official Audio) ft. Nicki Minaj.mp3'
+        path: './Music/Davido - Holy Ground (Official Audio) ft. Nicki Minaj.mp3',
+        image: './images/holy ground.jpeg'
     }
 ]
 
@@ -28,14 +33,15 @@ const audios = [
 let audioindex = 1;
 
 // load song into dom first
-loadAudio(audios[audioindex].path, audios[audioindex].title)
+loadAudio(audios[audioindex].path, audios[audioindex].title, audios[audioindex].image)
 
 // functions
 
 // load music to audio
-function loadAudio(song, musictitle){
+function loadAudio(song, musictitle, songimage){
     audio.src = song
     title.innerText = musictitle
+    image.src = songimage
 }
 
 function playMusic(){
@@ -53,7 +59,7 @@ function nextMusic(){
     if(audioindex > audios.length - 1){
         audioindex = 0
     }
-    loadAudio(audios[audioindex].path, audios[audioindex].title)
+    loadAudio(audios[audioindex].path, audios[audioindex].title, audios[audioindex].image)
     playMusic()
 }
 
@@ -62,7 +68,7 @@ function previousMusic(){
     if(audioindex < 0){
         audioindex = audios.length - 1
     }
-    loadAudio(audios[audioindex].path, audios[audioindex].title)
+    loadAudio(audios[audioindex].path, audios[audioindex].title, audios[audioindex].image)
     playMusic()
 }
 
