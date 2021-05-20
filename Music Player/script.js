@@ -46,11 +46,15 @@ function loadAudio(song, musictitle, songimage){
 
 function playMusic(){
     audioContainer.classList.add('play')
+    play.querySelector('i.fas').classList.remove('fa-play');
+    play.querySelector('i.fas').classList.add('fa-pause');
     audio.play()
 }
 
 function pauseMusic(){
     audioContainer.classList.remove('play')
+    play.querySelector('i.fas').classList.remove('fa-pause');
+    play.querySelector('i.fas').classList.add('fa-play');
     audio.pause()
 }
 

@@ -1,10 +1,14 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 body{
-    background-color: rgb(192, 192, 126);
+    /* background-color: rgb(192, 192, 126); */
+    background-image: radial-gradient( circle farthest-corner at 12.3% 19.3%,  rgba(85,88,218,1) 0%, rgba(95,209,249,1) 100.2% );
+    font-family: 'Poppins', sans-serif;
 }
 .container{
     display: flex;
@@ -15,6 +19,9 @@ body{
 }
 .musicinfo{
     display: inline-block;
+    color: white;
+    font-size: 1.2rem;
+    margin: 0.5rem;
 }
 .img-cont img{
     height: 9.375rem;
@@ -22,7 +29,18 @@ body{
     border-radius: 50%;
     animation: rotate 6s linear infinite;
 }
-
+.musicplayer button{
+    padding: 0.3rem;
+    font-size: 1.2rem;
+    border: none;
+    border-radius: 5px;
+    transition: 0.5s all ease;
+    margin: 0.3rem;
+}
+.musicplayer button:hover{
+    /* box-shadow: 5px 5px 10px white; */
+    transform: translate(0%, -20%);
+}
 /* making the image rotate */
 @keyframes rotate{
     from{
