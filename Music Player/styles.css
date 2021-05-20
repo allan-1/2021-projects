@@ -6,7 +6,6 @@
     box-sizing: border-box;
 }
 body{
-    /* background-color: rgb(192, 192, 126); */
     background-image: radial-gradient( circle farthest-corner at 12.3% 19.3%,  rgba(85,88,218,1) 0%, rgba(95,209,249,1) 100.2% );
     font-family: 'Poppins', sans-serif;
 }
@@ -38,7 +37,6 @@ body{
     margin: 0.3rem;
 }
 .musicplayer button:hover{
-    /* box-shadow: 5px 5px 10px white; */
     transform: translate(0%, -20%);
 }
 /* making the image rotate */
