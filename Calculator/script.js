@@ -8,12 +8,10 @@ const del = document.getElementById('del')
 const reset = document.getElementById('rst')
 
 let oper;
-
 // check if operator button is clicked 
 let elementisclicked = false;
 
 // functions
-
 // handles the click event of operator
 function clickHandler(){
     elementisclicked = true
@@ -22,21 +20,17 @@ function clear(){
     currentoutput.innerText = '';
     prevoutput.innerText = 0;
 }
-
 function dels(){
     if(elementisclicked == true){
         currentoutput.innerText =  currentoutput.innerText.toString().slice(0, -1);
     }else{
         prevoutput.innerText =  prevoutput.innerText.toString().slice(0, -1);
     }
-    
 }
-
 // selects the operator
 function chooseOperation(operators){
     oper = operators;
 }
-
 function compute(){
     let computation;
     const prev = parseFloat(prevoutput.innerText);
@@ -62,7 +56,6 @@ function compute(){
     prevoutput.innerText = prevoutput.innerText.slice(0, 10)
     currentoutput.innerText = ""
 }
-
 function printScreen(num){
     if(elementisclicked == true){
         currentoutput.innerText += num
@@ -71,7 +64,6 @@ function printScreen(num){
         prevoutput.innerText += num
     }
 }
-
 
 // implements
 number.forEach(number => {
