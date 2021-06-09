@@ -1,48 +1,91 @@
 const number = document.querySelectorAll('#num')
-const output = document.getElementById('output')
+const prevoutput = document.getElementById('prevoutput')
+const currentoutput = document.getElementById('currentoutput')
 const operator = document.querySelectorAll('#operat')
 const equal = document.getElementById('equal')
 const del = document.getElementById('del')
 const reset = document.getElementById('rst')
 
-let num2 = ''
-let num1 = ''
-let operators = ''
-let total
-
+let oper;
+let num1
+let num2;
+let elementisclicked = false;
 // functions
-function printScreen(num){
-    output.innerText = num
+function clickHandler(){
+    elementisclicked = true
 }
-function operations(num1, num2){
-    operator.forEach(operat => {
-        operat.addEventListener('click', (e)=>{
-            let operas = e.target.value
-            console.log(operas)
-            switch(operas){
-                case '+':
-                    total = num1 + num2;
-                    break
-                case '-':
-                    total = num1 - num2;
-                    break
-                case '*':
-                    total = num1 * num2;
-                    break
-                case '/':
-                    total = num1 / num2;
-                    break
-            }
-        })
-    })
+function clear(){
+    currentoutput.innerText = '';
+    prevoutput.innerText = 0;
 }
 
+function dels(){
+    if(elementisclicked == true){
+        currentoutput.innerText =  currentoutput.innerText.toString().slice(0, -1);
+    }else{
+        prevoutput.innerText =  prevoutput.innerText.toString().slice(0, -1);
+    }
+    
+}
+function chooseOperation(operators){
+    oper = operators;
+}
+
+function compute(){
+    let computation;
+    const prev = parseFloat(prevoutput.innerText);
+    const current = parseFloat(currentoutput.innerText);
+    // if(isNaN(prev) || isNaN(current)) return
+    switch(oper){
+        case '+':
+            computation = prev + current;
+            break;
+        case '-':
+            computation = prev + current;
+            break;
+        case '*':
+            computation = prev * current;
+            break;
+        case '/':
+            computation = prev / current;
+            break;
+        default:
+            return;
+    }
+    prevoutput.innerText = computation
+    prevoutput.innerText = prevoutput.innerText.slice(0, 10)
+    currentoutput.innerText = ""
+}
+
+function printScreen(num){
+    if(elementisclicked == true){
+        currentoutput.innerText += num
+    }else{
+        num2 += "" + num
+        prevoutput.innerText += num
+    }
+}
+
+
+// implements
 number.forEach(number => {
     number.addEventListener('click', (e)=>{
         let nums = e.target.value;
-        num1 += nums
-        printScreen(num1)
+        printScreen(nums)
     })
 })
-
-operations(num1, num2)
+del.addEventListener('click', ()=>{
+    dels()
+})
+reset.addEventListener('click', ()=>{
+    clear()
+})
+operator.forEach(opers => {
+    opers.addEventListener('click', (e)=>{
+        chooseOperation(e.target.value)
+        clickHandler()
+    })
+})
+equal.addEventListener('click', ()=>{
+    compute()
+})

@@ -7,7 +7,11 @@
     --very-dark-blue-screen: hsl(224, 36%, 15%);
     /* theme 1 keys */
     --dark-blue-key: hsl(225, 21%, 49%);
-    --dark-blue-shadow: hsl(224, 28%, 35%)
+    --dark-blue-shadow: hsl(224, 28%, 35%);
+    --red-key-background: hsl(6, 63%, 50%);
+    --dark-red-shadow: hsl(6, 70%, 34%);
+    --light-gray-orange: hsl(30, 25%, 89%);
+    --grayish-orange-shadow: hsl(28, 16%, 65%);
 }
 *{
     margin: 0;
@@ -34,25 +38,43 @@ body{
     background-color: var(--very-dark-blue-screen);
     color: white;
     padding: 0.5rem;
-    width: 15rem;
-    height: 2.5rem;
-    font-size: 1.3rem;
+    width: 16rem;
+    height: 4rem;
+    font-size: 1.6rem;
     border-radius: 5px;
     margin: 0.5rem 0;
     text-align: right;
 }
-.buttons{
+.btncontainer{
     background-color: var(--very-dark-blue-keypad);
     border-radius: 6px;
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    grid-gap: 0.4rem;
     padding: 1rem;
     color: var(--dark-blue-key);
     text-shadow: var(--dark-blue-shadow);
 }
-.buttons button{
+.buttons{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 0.4rem;
+}
+.bottom{
+    margin-top: 0.4rem;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 0.3rem;
+}
+.buttons button, .bottom button{
     padding: 0.3rem;
     border-radius: 5px;
     border: none;
+    font-size: 1.5rem;
+}
+.redel, .equal{
+    color: #fff;
+}
+.equal{
+    background-color: var(--red-key-background);
+}
+.redel{
+    background-color: var(--dark-blue-key);
 }
