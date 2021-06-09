@@ -1,3 +1,4 @@
+// selectors
 const number = document.querySelectorAll('#num')
 const prevoutput = document.getElementById('prevoutput')
 const currentoutput = document.getElementById('currentoutput')
@@ -7,10 +8,13 @@ const del = document.getElementById('del')
 const reset = document.getElementById('rst')
 
 let oper;
-let num1
-let num2;
+
+// check if operator button is clicked 
 let elementisclicked = false;
+
 // functions
+
+// handles the click event of operator
 function clickHandler(){
     elementisclicked = true
 }
@@ -27,6 +31,8 @@ function dels(){
     }
     
 }
+
+// selects the operator
 function chooseOperation(operators){
     oper = operators;
 }
