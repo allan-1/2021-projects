@@ -17,8 +17,10 @@ function clickHandler(){
     elementisclicked = true
 }
 function clear(){
+    elementisclicked = false
     currentoutput.innerText = '';
     prevoutput.innerText = 0;
+    prevoutput.innerText =  prevoutput.innerText.toString().slice(0, -1);
 }
 function dels(){
     if(elementisclicked == true){
@@ -60,7 +62,6 @@ function printScreen(num){
     if(elementisclicked == true){
         currentoutput.innerText += num
     }else{
-        num2 += "" + num
         prevoutput.innerText += num
     }
 }
