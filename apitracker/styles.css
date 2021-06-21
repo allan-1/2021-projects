@@ -1,0 +1,93 @@
+*, *::before, *::after{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    font-family: 'Rubik', sans-serif;
+}
+.topsearch{
+    display: flex;
+    flex-direction: column;
+    background-image: url(./Images/pattern-bg.png);
+    background-repeat: no-repeat;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem 2rem 6rem;
+}
+.heading{
+    color: #ffff;
+    margin: 1rem;
+}
+form input, form button{
+    font-size: 16px;
+    border: none;
+    padding: 0.5rem;
+}
+input{
+    width: 17rem;
+    font-size: 1rem;
+}
+button{
+    color: white;
+    background-color: black;
+    height: 100%;
+    cursor: pointer;
+}
+.details{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0.8rem;
+    background-color: #ffff;
+    width: 85%;
+    border-radius: 15px;
+    position: absolute;
+    top: 11rem;
+    left: 4rem;
+    z-index: 100;
+}
+.sub-details{
+    margin: 0 2rem;
+    display: flex;
+    flex-direction: column;
+    padding: 0 2rem;
+    border-right: 1px solid hsl(0, 0%, 76%);
+    z-index: 100;
+}
+.sub-details:last-child{
+    border-right: none;
+}
+.sub-details h3{
+    color: hsl(0, 0%, 17%);
+    margin: 1rem 0;
+    text-align: center;
+}
+.sub-details p{
+    color: hsl(0, 0%, 59%);
+    text-align: center;
+}
+#mapid{
+    height: 26.25rem;
+    z-index: 1;
+}
+
+@media(max-width:600px){
+    .details{
+        flex-wrap: wrap;
+        left: 2.5rem;
+        top: 12rem;
+    }
+    .sub-details{
+        border: none;
+    }
+    .sub-details h3{
+        margin: 0.5rem 0;
+    }
+    input{
+        width: 15rem;
+    }
+    #mapid{
+        height: 27rem;
+    }
+}
