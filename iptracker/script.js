@@ -13,8 +13,8 @@ submit.addEventListener('click', getIp)
 function getIp(event) {
     event.preventDefault();
     let ipadress = inputs.value;
-    inputs.value = '';
     getIpAdress(ipadress)
+    inputs.value = '';
 }
 const getIpAdress = async (ipadress) => {
     const response = await fetch(' https://geo.ipify.org/api/v1?apiKey=at_oHLI4USowbc8HyCirAD0CcqIrpSPr&ipAddress='+ipadress)
