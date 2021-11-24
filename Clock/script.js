@@ -5,17 +5,10 @@ document.addEventListener('DOMContentLoaded', getClock);
 
 function getClock() {
     let date = new Date()
-    let year = date.getFullYear()
-    let month = date.getMonth()
-    let day = date.getDate()
-    let hour = date.getHours()
-    let mins = date.getMinutes();
-    let seconds = date.getSeconds()
-    month += 1
-    hour = (hour < 10) ? '0' + hour : hour 
-    mins = (mins < 10) ? '0' + mins : mins
-    seconds = (seconds < 10) ? '0' + seconds : seconds 
-    displayDate.innerText = day + ' / ' + month + ' / ' + year
-    displayClock.innerText = hour + ' : ' + mins + ' : ' + seconds + ' hrs'
+    let day = date.toLocaleString('en-US', {day: '2-digit', month: 'short', year: 'numeric'}) 
+    let time = date.toLocaleString('en-US', {hour: '2-digit', minute: '2-digit', second: '2-digit', hour12: 'true'})
+  
+    displayDate.innerText = day
+    displayClock.innerText = time
     setTimeout(getClock, 1000)
 }
